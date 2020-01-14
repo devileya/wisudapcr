@@ -28,14 +28,14 @@ class Prodi extends CI_Controller
         $data["prodi"] = $prodi;
         $data["index_prodi"] = $index_prodi;
         $data["data"] = $this->WisudawanModel->getPesanByProdi($prodi);
-        $this->load->view('Prodi/lists', $data);
+        $this->load->view('prodi/lists', $data);
     }
 
     function edit()
     {
         $id = $this->uri->segment('3');
         $data["data"] = $this->WisudawanModel->getById($id);
-        $this->load->view('Prodi/edit', $data);
+        $this->load->view('prodi/edit', $data);
     }
 
 //    Fungsi untuk mengupdate nilai pesan dan kesan
