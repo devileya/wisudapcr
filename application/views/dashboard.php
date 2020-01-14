@@ -41,7 +41,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center w-75 m-auto">
-                                    <h3 class="text-muted mb-4 mt-3">Daftar Pesan & Kesan <?= $prodi ?></h3>
+                                    <h3 class="text-muted mb-4 mt-3">Pesan & Kesan Terbaik</h3>
                                 </div>
                                 <table id="example3" class="table table-bordered table-striped">
                                     <thead>
@@ -51,39 +51,34 @@
                                         <th>NIM</th>
                                         <th>Pesan</th>
                                         <th>Kesan</th>
-                                        <th>Nilai</th>
+                                        <th>Prodi</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?php
                                     $no=1;
                                     foreach($data as $item){ ?>
-                                    <tr>
-                                        <td><?php echo $no++ ?></td>
-                                        <td><?= $item->nama ?></a></td>
-                                        <td><?= $item->nim ?></td>
-                                        <td><?= $item->pesan ?></td>
-                                        <td><?= $item->kesan ?></td>
-                                        <td>
-                                            <form action="<?= site_url("Prodi/update/".$item->id."/".$index_prodi) ?>" method="post">
-                                                <input name="nilai" class="form-control" type="number" min="1" max="10" placeholder="1...10" value="<?= $item->nilai ?>">
-                                                <input type="submit" value="Submit" class="form-control btn btn-success">
-                                            </form>
-                                        </td>
-                            </tr>
-                            <?php } ?>
+                                        <tr>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?= $item->nama ?></a></td>
+                                            <td><?= $item->nim ?></td>
+                                            <td><?= $item->pesan ?></td>
+                                            <td><?= $item->kesan ?></td>
+                                            <td><?= $item->prodi ?></td>
+                                        </tr>
+                                    <?php } ?>
 
-                            </tbody>
-                            </table>
-                        </div> <!-- end card-box -->
-                    </div> <!-- end card-->
-                </div><!-- end col -->
-            </div>
-            <!-- end row -->
+                                    </tbody>
+                                </table>
+                            </div> <!-- end card-box -->
+                        </div> <!-- end card-->
+                    </div><!-- end col -->
+                </div>
+                <!-- end row -->
 
-        </div> <!-- end card-body-->
-    </div> <!-- end card -->
-</div> <!-- end col -->
+            </div> <!-- end card-body-->
+        </div> <!-- end card -->
+    </div> <!-- end col -->
 </div>
 <!-- end row -->
 

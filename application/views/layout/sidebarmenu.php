@@ -18,40 +18,13 @@
                 <ul class="metismenu" id="side-menu">
 
                     <li>
-                        <a href="javascript: void(0);">
-                            <i class="fe-home"></i>
-                            <span> Divisi </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li>
-                                <a href="<?= site_url("Panitia/lists/ketua") ?>">Ketua</a>
-                            </li>
-                            <li>
-                                <a href="<?= site_url("Panitia/lists/bendahara") ?>">Bendahara</a>
-                            </li>
-                            <li>
-                                <a href="<?= site_url("Panitia/lists/perlengkapan") ?>">Perlengkapan</a>
-                            </li>
-                            <li>
-                                <a href="<?= site_url("Panitia/lists/dokumentasi") ?>">Dokumentasi</a>
-                            </li>
-                            <li>
-                                <a href="<?= site_url("Panitia/lists/acara") ?>">Acara</a>
-                            </li>
-                            <li>
-                                <a href="<?= site_url("Panitia/lists/sekretaris") ?>">Sekretaris</a>
-                            </li>
-                            <li>
-                                <a href="<?= site_url("Panitia/lists/konsumsi") ?>">Konsumsi</a>
-                            </li>
-                        </ul>
+                        <a class="fe-award" href="<?= site_url("Dashboard") ?>">  Pesan Kesan Terbaik</a>
                     </li>
 
                     <li>
                         <a href="javascript: void(0);">
                             <i class="fe-layers"></i>
-                            <span> Program Studi </span>
+                            <span> Kesan Pesan (Prodi) </span>
                             <span class="menu-arrow"></span>
                         </a>
 
@@ -85,6 +58,54 @@
                             </li>
                             <li>
                                 <a href="<?= site_url("Prodi/lists/9") ?>">Akuntansi (D3)</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i class="fe-home"></i>
+                            <span> Divisi </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="<?= site_url("Panitia/lists/ketua") ?>">Ketua</a>
+                            </li>
+                            <li>
+                                <a href="<?= site_url("Panitia/lists/bendahara") ?>">Bendahara</a>
+                            </li>
+                            <li>
+                                <a href="<?= site_url("Panitia/lists/perlengkapan") ?>">Perlengkapan</a>
+                            </li>
+                            <li>
+                                <a href="<?= site_url("Panitia/lists/dokumentasi") ?>">Dokumentasi</a>
+                            </li>
+                            <li>
+                                <a href="<?= site_url("Panitia/lists/acara") ?>">Acara</a>
+                            </li>
+                            <li>
+                                <a href="<?= site_url("Panitia/lists/sekretaris") ?>">Sekretaris</a>
+                            </li>
+                            <li>
+                                <a href="<?= site_url("Panitia/lists/konsumsi") ?>">Konsumsi</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i class="fe-briefcase"></i>
+                            <span> Kegiatan Rapat </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="<?= site_url("Rapat/lists") ?>">Data Rapat</a>
+                            </li>
+                            <li>
+                                <a href="<?= site_url("Rapat") ?>">Tambah Rapat</a>
                             </li>
                         </ul>
                     </li>

@@ -54,7 +54,7 @@ class Login extends CI_Controller
         {
             $data['password'] = md5($this->input->post('password'));
             $this->LoginModel->update($this->session->userdata('name'), $data);
-            redirect("Panitia");
+            redirect("Dashboard");
         } else {
           redirect("Login/change_password");
         }

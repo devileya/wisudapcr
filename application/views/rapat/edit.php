@@ -41,49 +41,45 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center w-75 m-auto">
-                                    <h3 class="text-muted mb-4 mt-3">Daftar Pesan & Kesan <?= $prodi ?></h3>
+                                    <h3 class="text-muted mb-4 mt-3">Edit Data Rapat</h3>
                                 </div>
-                                <table id="example3" class="table table-bordered table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>Nama</th>
-                                        <th>NIM</th>
-                                        <th>Pesan</th>
-                                        <th>Kesan</th>
-                                        <th>Nilai</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                    $no=1;
-                                    foreach($data as $item){ ?>
-                                    <tr>
-                                        <td><?php echo $no++ ?></td>
-                                        <td><?= $item->nama ?></a></td>
-                                        <td><?= $item->nim ?></td>
-                                        <td><?= $item->pesan ?></td>
-                                        <td><?= $item->kesan ?></td>
-                                        <td>
-                                            <form action="<?= site_url("Prodi/update/".$item->id."/".$index_prodi) ?>" method="post">
-                                                <input name="nilai" class="form-control" type="number" min="1" max="10" placeholder="1...10" value="<?= $item->nilai ?>">
-                                                <input type="submit" value="Submit" class="form-control btn btn-success">
-                                            </form>
-                                        </td>
-                            </tr>
-                            <?php } ?>
 
-                            </tbody>
-                            </table>
-                        </div> <!-- end card-box -->
-                    </div> <!-- end card-->
-                </div><!-- end col -->
-            </div>
-            <!-- end row -->
+                                <form action="<?= site_url("Rapat/update/".$this->uri->segment('3')) ?>" method="post">
 
-        </div> <!-- end card-body-->
-    </div> <!-- end card -->
-</div> <!-- end col -->
+                                    <div class="form-group mb-3">
+                                        <label for="nama">Judul</label>
+                                        <input class="form-control" name="judul" type="text" id="judul" required value="<?= $data->judul ?>">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="nim">Deskripsi</label>
+                                        <textarea class="form-control" name="deskripsi" rows="5" id="deskripsi" required> <?= $data->deskripsi ?> </textarea>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="nim">Tanggal</label>
+                                        <input class="form-control" name="tanggal" type="date" id="tanggal" required value="<?= $data->tanggal ?>">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="nim">Kesimpulan</label>
+                                        <textarea class="form-control" name="kesimpulan" rows="5" id="kesimpulan" required> <?= $data->kesimpulan ?> </textarea>
+                                    </div>
+
+                                    <div class="form-group mb-0 text-center">
+                                        <button class="btn btn-primary btn-block" type="submit"> Submit </button>
+                                    </div>
+
+                                </form>
+                            </div> <!-- end card-box -->
+                        </div> <!-- end card-->
+                    </div><!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- end card-body-->
+        </div> <!-- end card -->
+    </div> <!-- end col -->
 </div>
 <!-- end row -->
 

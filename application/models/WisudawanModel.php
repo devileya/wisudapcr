@@ -34,6 +34,12 @@ class WisudawanModel extends CI_Model
         return $data->result();
     }
 
+    function getPesanTerbaik()
+    {
+        $data = $this->db->query("select * from wisudawan, pesan WHERE wisudawan.id = pesan.wisudawan_id ORDER BY nilai DESC LIMIT 10");
+        return $data->result();
+    }
+
     function update($id,$data){
         $this->db->where('id',$id);
         $this->db->update($this->tabel_name,$data);
