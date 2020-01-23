@@ -15,4 +15,9 @@ class Dashboard extends CI_Controller
         $data["data"] = $this->WisudawanModel->getPesanTerbaik();
         $this->load->view('dashboard', $data);
     }
+
+    function wisudawan()
+    {
+        $this->load->view('wisudawan/data');
+    }
 }

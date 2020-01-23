@@ -17,8 +17,13 @@
 
                 <ul class="metismenu" id="side-menu">
 
+
                     <li>
                         <a class="fe-award" href="<?= site_url("Dashboard") ?>">  Pesan Kesan Terbaik</a>
+                    </li>
+
+                    <li>
+                        <a class="fe-database" href="<?= site_url("Dashboard/wisudawan") ?>">  Data Wisudawan</a>
                     </li>
 
                     <li>
@@ -62,7 +67,7 @@
                         </ul>
                     </li>
 
-                    <li>
+                    <!--li>
                         <a href="javascript: void(0);">
                             <i class="fe-home"></i>
                             <span> Divisi </span>
@@ -91,21 +96,21 @@
                                 <a href="<?= site_url("Panitia/lists/konsumsi") ?>">Konsumsi</a>
                             </li>
                         </ul>
-                    </li>
+                    </li-->
 
                     <li>
                         <a href="javascript: void(0);">
                             <i class="fe-briefcase"></i>
-                            <span> Kegiatan Rapat </span>
+                            <span> Kegiatan Perdivisi </span>
                             <span class="menu-arrow"></span>
                         </a>
 
                         <ul class="nav-second-level" aria-expanded="false">
                             <li>
-                                <a href="<?= site_url("Rapat/lists") ?>">Data Rapat</a>
+                                <a href="<?= site_url("Kegiatan/lists") ?>">Data Kegiatan</a>
                             </li>
                             <li>
-                                <a href="<?= site_url("Rapat") ?>">Tambah Rapat</a>
+                                <a href="<?= site_url("Kegiatan") ?>">Tambah Kegiatan</a>
                             </li>
                         </ul>
                     </li>

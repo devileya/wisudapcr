@@ -1,4 +1,4 @@
-<script type="text/javascript" src=<?= base_url("assets/js/jquery.js") ?>></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src=<?= base_url("assets/js/dropzone.min.js") ?>></script>
 <script type="text/javascript" src=<?= base_url("assets/js/ckeditor/ckeditor.js") ?>></script>
 <script src=<?= base_url("assets/js/vendor.min.js") ?>></script>
