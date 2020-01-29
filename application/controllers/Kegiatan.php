@@ -24,6 +24,7 @@ class Kegiatan extends CI_Controller
             'divisi' => $this->input->post('divisi'),
             'tanggal' => $this->input->post('tanggal'),
             'kegiatan' => $this->input->post('kegiatan'),
+            'status' => "Open",
         );
         $this->KegiatanModel->insert($data);
         redirect("Kegiatan/lists");
@@ -50,6 +51,7 @@ class Kegiatan extends CI_Controller
             'divisi' => $this->input->post('divisi'),
             'tanggal' => $this->input->post('tanggal'),
             'kegiatan' => $this->input->post('kegiatan'),
+            'status' => $this->input->post('status'),
         );
         $this->KegiatanModel->update($id, $data);
         redirect("Kegiatan/lists/".$this->input->post('id'));
@@ -59,5 +61,11 @@ class Kegiatan extends CI_Controller
         $id = $this->uri->segment('3');
         $this->KegiatanModel->deleteById($id);
         redirect("Kegiatan/lists");
+    }
+
+    function data(){
+        $data["data"] = $this->KegiatanModel->get();
+        header('Content-Type: application/json');
+        echo json_encode($data);
     }
 }

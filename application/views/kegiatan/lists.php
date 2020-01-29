@@ -46,47 +46,17 @@
                                 <div class="float-sm-right col-md-2">
                                     <a href="<?php echo base_url() ?>kegiatan" class="btn btn-block btn-success btn-flat"><i class="fa fa-plus"></i> Tambah Kegiatan</a>
                                 </div>
-                                <table id="example3" class="table table-bordered table-striped">
+                                <table id="data_kegiatan" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>No.</th>
                                         <th>Tanggal</th>
                                         <th>Nama</th>
                                         <th>Divisi</th>
                                         <th>Kegiatan</th>
+                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
-                                    <?php
-                                    $no=1;
-                                    foreach($data as $item){ ?>
-                                        <tr>
-                                            <td><?php echo $no++ ?></td>
-                                            <td><?= date("d-m-Y", strtotime($item->tanggal)) ?></a></td>
-                                            <td><?= $item->nama ?></td>
-                                            <td><?= $item->divisi ?></td>
-                                            <td><?= $item->kegiatan ?></td>
-                                            <td>
-                                                <div class="margin">
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-danger btn-flat">Aksi</button>
-                                                        <button type="button" class="btn btn-danger btn-flat dropdown-toggle" data-toggle="dropdown">
-                                                            <span class="caret"></span>
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu" role="menu">
-                                                            <a class="dropdown-item" href="<?php echo base_url() ?>kegiatan/edit/<?php echo $item->id ?>">Ubah</a>
-                                                            <a class="dropdown-item" href="<?php echo base_url() ?>kegiatan/delete/<?php echo $item->id ?>">Hapus</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                            </div>
-                            </td>
-                                        </tr>
-                                    <?php } ?>
-
-                                    </tbody>
                                 </table>
                             </div> <!-- end card-box -->
                         </div> <!-- end card-->
@@ -120,32 +90,49 @@
 <!-- App js -->
 <?php $this->load->view("layout/js") ?>
 <script type="text/javascript">
-    $(function()
-    {
-        $('#btnSubmit').on('click',function()
-        {
-            $(this).val('Please wait ...')
-                .attr('disabled','disabled');
-            $('#formHome').submit();
-        });
+    $(document).ready(function(){
+        $('#data_kegiatan').DataTable().draw().destroy();
 
+        const url = "<?= base_url("Kegiatan/data") ?>";
+
+        $.ajax({
+            url: url,
+            cache: false,
+            contentType: false,
+            processData: false,
+            type: 'POST',
+            dataType: 'JSON',
+            success: function (data) {
+                console.log(data);
+                $('#data_kegiatan').DataTable({
+                    "data": data.data,
+                    "columns": [
+                        {"data": "tanggal"},
+                        {"data": "nama"},
+                        {"data": "divisi"},
+                        {"data": "kegiatan"},
+                        {"data": "status"},
+                        {"render": function (data, type, row) {
+                            var html = '<div class="margin">';
+                            html += '<div class="btn-group">';
+                            html += '<button type="button" class="btn btn-danger btn-flat">Aksi</button>';
+                            html += '<button type="button" class="btn btn-danger btn-flat dropdown-toggle" data-toggle="dropdown">';
+                            html += '<span class="caret"></span>';
+                            html += '<span class="sr-only">Toggle Dropdown</span>';
+                            html += '</button>';
+                            html += '<div class="dropdown-menu" role="menu">';
+                            html += '<a class="dropdown-item" href="<?php echo base_url() ?>kegiatan/edit/'+row.id+'">Ubah</a>';
+                            html += '<a class="dropdown-item" href="<?php echo base_url() ?>kegiatan/delete/'+row.id+'">Hapus</a>';
+                            html += '</div></div></div>';
+
+
+                        return html;
+                        } }
+                    ]
+                });
+            }
+        });
     });
-
-
-    (function () {
-        /**
-         * Video element
-         * @type {HTMLElement}
-         */
-        var video = document.getElementById("my-video");
-
-        /**
-         * Check if video can play, and play it
-         */
-        video.addEventListener("canplay", function () {
-            video.play();
-        });
-    })();
 </script>
 </body>
 </html>

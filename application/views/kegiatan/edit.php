@@ -74,6 +74,14 @@
                                         <textarea class="form-control" name="kegiatan" rows="5" id="kegiatan" required> <?= $data->kegiatan ?> </textarea>
                                     </div>
 
+                                    <div class="form-group mb-3">
+                                        <label for="status">Status</label>
+                                        <select name="status" class="form-control" required>
+                                            <option <?= $data->status == "Open" ?>>Open</option>
+                                            <option <?= $data->status == "Close" ?>>Close</option>
+                                        </select>
+                                    </div>
+
                                     <div class="form-group mb-0 text-center">
                                         <button class="btn btn-primary btn-block" type="submit"> Submit </button>
                                     </div>

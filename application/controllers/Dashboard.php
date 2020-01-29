@@ -20,4 +20,10 @@ class Dashboard extends CI_Controller
     {
         $this->load->view('wisudawan/data');
     }
+
+    function dataWisudawan()
+    {
+        $json = file_get_contents("http://api.pcr.ac.id/siak/get_wisudawan_by_angkatan");
+        echo json_decode($json);
+    }
 }
